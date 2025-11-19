@@ -15,7 +15,7 @@ pipeline {
     stage('Test') {
       steps {
         // Simulamos tests
-        bat 'echo Ejecutando tests... & exit /b 0'
+        bat 'exit /b 1'
       }
     }
     stage('Run script') {
