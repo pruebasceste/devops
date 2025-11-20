@@ -36,7 +36,6 @@ pipeline {
             steps {
                 bat """
                     echo Ejecutando tests de ejemplo...
-                    timeout /T 2 /NOBREAK
                     echo Tests OK
                 """
             }
