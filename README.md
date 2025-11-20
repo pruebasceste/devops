@@ -5,4 +5,3 @@ Esto es una prueba para lanzar el poll SCM
 
 Este cambio es para lanzar el evento del webhook
 
-Quiero lanzar el webhook
