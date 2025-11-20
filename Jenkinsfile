@@ -4,7 +4,7 @@ pipeline {
     parameters {
         string(
             name: 'APP_VERSION',
-            defaultValue: 'latest',
+            defaultValue: 'lat est',
             description: 'Versión/tag de la imagen Docker'
         )
         booleanParam(
