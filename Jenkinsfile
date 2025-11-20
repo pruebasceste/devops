@@ -34,11 +34,11 @@ pipeline {
 
         stage('Tests / Scripts') {
             steps {
-                sh '''
-                    echo "Ejecutando tests de ejemplo..."
-                    sleep 2
-                    echo "Tests OK"
-                '''
+                bat """
+                    echo Ejecutando tests de ejemplo...
+                    timeout /T 2 /NOBREAK
+                    echo Tests OK
+                """
             }
         }
 
@@ -47,8 +47,8 @@ pipeline {
                 expression { params.DO_BUILD }
             }
             steps {
-                sh """
-                    echo "Construyendo imagen Docker..."
+                bat """
+                    echo Construyendo imagen Docker...
                     docker build -t ${env.DOCKERHUB_USER}/${env.IMAGE_NAME}:${params.APP_VERSION} .
                 """
             }
@@ -63,8 +63,8 @@ pipeline {
                 }
             }
             steps {
-                sh """
-                    echo "Subiendo imagen a DockerHub..."
+                bat """
+                    echo Subiendo imagen a DockerHub...
                     docker push ${env.DOCKERHUB_USER}/${env.IMAGE_NAME}:${params.APP_VERSION}
                 """
             }
